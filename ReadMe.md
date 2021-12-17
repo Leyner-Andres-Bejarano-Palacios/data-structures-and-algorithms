@@ -52,7 +52,7 @@ A function with cuadratic time complexity is a functiong where for each element 
 
 A cubic function would be one function where for every element in the datasest we are using a function with cuadratic time complexity, in the same way a function with n^4 time complexity would be one function where for every element in the dataset we are using a cubic function, and so on with  n^5, n^6, n^7 etc...
 
-A function with exponential time complexity means that we are having a number of iterations equal to 2 pows the dataset size (O2^n).
+A function with exponential time complexity means that we are having a number of iterations equal to 2 pows the dataset size (O2^n). A great example of these algorithms is the one we used in problme number 1863, where we have to create all of the subsets of a given array.
 
 For competitive programming there are only two types of important spacial complexity O(1) meaning that you are creating new variables in every iteration and the non-constant meaning that you are doing it.
 
@@ -108,7 +108,7 @@ bubbleSort operate in place but it operate in O(n)
 
 concepts to mention, key, record , satellite data, stability
 
-### 5 gates of true 1528
+### 5 logic gates  1528
 
 If you are reading this you are a programmer and most likely you are already familiar with the gates of true "AND" "OR" because we use them a lot in our conditional statement in java or python.
 
@@ -145,21 +145,21 @@ A full binary tree is a data structure where the nodes that decide to have child
 
 picture taken from this link, you should check that channel is amazing
 
+### Summation
 
-### ???? greedy problmes , exercise 1710
+(n(n+1)) / 2   useful for problems like leetcode number 268
 
-### ???? subarrays, subsets and subsequences
+### prefix sum array and suffix array
 
-subarray is piece of the original array, subset is a new array
+A suffix array is a sorted array of all of the suffixes of a given array (video [explanation](https://www.youtube.com/watch?v=uxA__b23t2w&t=30s) ) , the prefix (could not find a good explanation of prefix array so following the leetcode problem number 654 as a guide we will asume that a prefix array is a counter part of a suffix array). The prefix sum array is (you know what, this explanation is [better](https://www.geeksforgeeks.org/prefix-sum-array-implementation-applications-competitive-programming/) ), I know the inverted prefix sum array (starting from the last element of the array until the first element) has a name but I don't remember what it is
 
+### ???? greedy problems
 
-### ???? xor properties
+I would like to sound smart, but I won't sound smarter than [this](https://www.geeksforgeeks.org/greedy-algorithms/), for a better undestanding of the greedy algoritm see leetcode problem number 1710
 
 ### ???? data structures (why I use hashmap so much)
 
 ### ???? how to know if two elements are in the same diagonal
-
-### ???? prefix suffix sum
 
 ### ???? preorder postorder inorder
 
@@ -191,10 +191,11 @@ subarray is piece of the original array, subset is a new array
 5.  exercise [link](https://leetcode.com/problems/shuffle-string/) 1528, this one special, ok, there will be a section in my readMe to talk about sorting algorithms, I need to write a lot of times the quick sort algoritmn to memorize it ()
     1.  link to my leetcode [post](https://leetcode.com/problems/shuffle-string/discuss/1606902/just-do-the-quick-sort-O(nlogn)).
 
-6. exercise [link](https://leetcode.com/problems/decode-xored-array/) 1720, another section in my documentation file, gates of truth 
+6. exercise [link](https://leetcode.com/problems/decode-xored-array/) 1720, another section in my documentation file, logic gates 
 
 7. exercise [link](https://leetcode.com/problems/create-target-array-in-the-given-order/) 1389 comparator and priorityQueue, I have already talked about this in the sorting algorithm
     1.  link to my leetcode [post](https://leetcode.com/problems/create-target-array-in-the-given-order/discuss/1607597/Priority-queue-to-sort-based-in-two-variables)
+
 
 8. exercise [link](https://leetcode.com/problems/count-number-of-pairs-with-absolute-difference-k/) 2006
     1.  link to my leetcode [post](https://leetcode.com/problems/count-number-of-pairs-with-absolute-difference-k/discuss/1607656/Using-a-map-(or-dict-in-python))
@@ -222,6 +223,8 @@ subarray is piece of the original array, subset is a new array
     1.  link to my leetcode [post](https://leetcode.com/problems/sum-of-all-subset-xor-totals/discuss/1610560/python-(2n)-backrtacking-something-you-can-came-up-with-in-an-interview)
 
 18. exercise [link](https://leetcode.com/problems/find-numbers-with-even-number-of-digits/) 1295 avoiding casting this to all cost
+    1.  always see the [constraints](https://leetcode.com/problems/find-numbers-with-even-number-of-digits/discuss/459489/JAVA-solution-with-100-better-space-and-Time)
+    2.  now, I can easily see in a interview someone requiring to do it if the constraint does not [exist](https://leetcode.com/problems/find-numbers-with-even-number-of-digits/discuss/458937/JAVA-MUST-READ-Solution-with-EXPLANATION-and-EXAMPLE-%3A))  
 
 19. exercise [link](https://leetcode.com/problems/smallest-index-with-equal-value/) rewritting this, what is the highest number equal to its position
 
@@ -387,9 +390,61 @@ class Solution:
 
 77. exercise [link](https://leetcode.com/problems/max-increase-to-keep-city-skyline/) 807
 
+import java.util.*;
+
+class Solution {
+
+    
+	public int maxIncreaseKeepingSkyline(int[][] grid) {
+        int total = 0;
+        HashMap<Integer, PriorityQueue<Integer>> hmapRows = new HashMap<>();
+        HashMap<Integer, PriorityQueue<Integer>> hmapCols = new HashMap<>();
+        for  (int i = 0; i < grid.length ; i ++){
+            hmapRows.putIfAbsent(i, new PriorityQueue<>());
+            for (int j=0; j < grid.length;j++){
+                hmapCols.putIfAbsent(j, new PriorityQueue<>());
+                hmapRows.get(i).add(grid[i][j]);
+                hmapCols.get(j).add(grid[i][j]);
+            }
+        }
+        
+        for  (int i = 0; i < grid.length ; i ++){
+            for (int j=0; j < grid.length;j++){
+                total = total + (grid[i][j]-Math.min(hmapRows.get(i).peek(),hmapCols.get(j).peek())); 
+            }
+        } 
+        return total;
+    }
+}
+
 78. exercise [link](https://leetcode.com/problems/maximum-binary-tree/) 654, way too easy but it will be fun to write
 
+public class Solution {
+    public TreeNode constructMaximumBinaryTree(int[] nums) {
+        return construct(nums, 0, nums.length);
+    }
+    public TreeNode construct(int[] nums, int l, int r) {
+        if (l == r)
+            return null;
+        int max_i = max(nums, l, r);
+        TreeNode root = new TreeNode(nums[max_i]);
+        root.left = construct(nums, l, max_i);
+        root.right = construct(nums, max_i + 1, r);
+        return root;
+    }
+    public int max(int[] nums, int l, int r) {
+        int max_i = l;
+        for (int i = l; i < r; i++) {
+            if (nums[max_i] < nums[i])
+                max_i = i;
+        }
+        return max_i;
+    }
+}
+
+
 79. exercise [link](https://leetcode.com/problems/sort-the-matrix-diagonally/) 1329
+    1.  link to my leetcode [post](https://leetcode.com/problems/sort-the-matrix-diagonally/discuss/1632841/Java-(nlogn)-identify-the-elements-of-that-diagonal)
 
 80. exercise [link](https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/) 1008, I had to see this one in youtube
 
