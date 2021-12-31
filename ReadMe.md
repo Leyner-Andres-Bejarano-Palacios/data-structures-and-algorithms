@@ -549,9 +549,11 @@ public class Solution {
 
 102. exercise [link](https://leetcode.com/problems/minimum-falling-path-sum/) 931 
 
-103. exercise [link](https://leetcode.com/problems/path-with-maximum-gold/) 1219, I don't know nothing abouth dfs or bfs right now
+103. exercise [link](https://leetcode.com/problems/path-with-maximum-gold/) 1219
+    1.  link to my leetcode [post](https://leetcode.com/problems/path-with-maximum-gold/discuss/1658561/Applying-Dfs-not-to-every-edge-but-in-the-greatest-value)
 
-104. exercise [link](https://leetcode.com/problems/find-all-groups-of-farmland/) 1992 cool oportunity to practice recursion
+104. exercise [link](https://leetcode.com/problems/find-all-groups-of-farmland/) 1992
+    1.  Now that I am a master of dfs this would be really easy
 
 105. exercise [link](https://leetcode.com/problems/number-of-times-binary-string-is-prefix-aligned/) 1375 I am definitily writting a post about this one 
 
