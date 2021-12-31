@@ -1,8 +1,8 @@
 # data-structures-and-algorithms
 
-Data structures and algorithms are usually the begging in the process of writting scalable software. the more requests your system has the more important it is to have a optimized algorithm (we understand optimized algorithm as those with the better time and space complexity .there are some weird cases where a better time complexity does not mean a better algotithm but are a few a will see some examples. Explanation of what time and space complexity is in sections below.
+Data structures and algorithms are usually the begining in the process of writting scalable software. the more requests your system has the more important it is to have an optimized algorithm . We understand optimized algorithm as those with the better time and space complexity .there are some weird cases where a better time complexity does not mean a better algotithm. Explanation of what time and space complexity is in sections below.
 
-At the botom of this readMe file is **the most important thing in this journey**, the exercises where the concepts are apply.
+At the botom of this readMe file is **the most important thing in this journey**, the exercises where the concepts are applied.
 
 I also would like to encourage you to try to explain all of these concepts and exercises because the best way of learning something is teaching it. Apart from that we should always try to give back something to the software community we owe so much.
 
@@ -54,8 +54,9 @@ A cubic function would be one function where for every element in the datasest w
 
 A function with exponential time complexity means that we are having a number of iterations equal to 2 pows the dataset size (O2^n). A great example of these algorithms is the one we used in problme number 1863, where we have to create all of the subsets of a given array.
 
-For competitive programming there are only two types of important spacial complexity O(1) meaning that you are creating new variables in every iteration and the non-constant meaning that you are doing it.
+This is a great example of a factorial time complexity [function](https://www.youtube.com/watch?v=Mo4vesaut8g&list=WL&index=7&t=6439s)
 
+For competitive programming there are only two types of important spacial complexity O(1) meaning that you are creating new variables in every iteration and the non-constant meaning that you are doing it. When you are working with recursive functions is very likely that the spatial complexity will be linear, becasuse every invocation of the recursive function is creating a piece of information for the bigger problem like they mention in this  [video](https://www.youtube.com/watch?v=Mo4vesaut8g&list=WL&index=7&t=6439s)
 ### 2. storing two numbers in one using bitmasking, exrcise 1920
 
 When you need two arrays, one for input and another for answer but can only use one (like in this occasion when they require constant space complexity) we will need to store two numbers in one. Notice that all numbers must be equal or less than the array lenght and the maximun lenght size is 1000. Binary representation of 1000 has 10 digits (1111101000) so we need to a number which binary representation has 10 digits and they all 1's (1023).
@@ -72,10 +73,6 @@ The second part is expanding the second  number using the mask.
 
 After that we are storing the second number in the next 10 bits. To do that first wee need to move the binary representation of 8 (1000) 10 spaces to the right so we dont modify the first number (this is call bit shifting), after that we place the shifted number in the three value using the "|" operator, this apply and "OR" gate of true.
 
-
-
-
-
 ###  3. Given two points, finding the function, exercise 1512
 
 Exercise 1512 is the type of exercise where is better to see it as three different problems, the firt problem is counting the appeareances of every number , the second one would be given a n number of apperance for every number how many pairs does it  
@@ -85,9 +82,9 @@ f(x) = mx + n, where m is the slope and n is the intersetction with the x axis (
 
 There are three important sorting algoritms, the quicksort, the mergesort and heapsort. In this readMe file we will mention some other sorting algoritms but it is very likely that you will never use them.
 
-Quicksort is the most used, it has a time complexity of O(nlogn), space complexity of O(logn) and operate in place. It can have a time complexity of O(2^n) in its worst case escenario (when they array is already sorted and when all of the elements are the same) but for most cases it is faster than heapsort and mergesort. Quicksort is one of the best examples that a better time complexity is not always a better algoritm given the existence of sorting algoritms like  . These are some of the few cases where a better time complexity does not mean a better algoritm, but again, these are isolated cases, for most cases a better time complexity means more scalability.
+Quicksort is the most used, it has a time complexity of O(nlogn), space complexity of O(logn) and operate in place. It can have a time complexity of O(2^n) in its worst case escenario (when they array is already sorted and when all of the elements are the same) but for most cases it is faster than heapsort and mergesort. 
 
-Another edge case where quicksort is not the most optmial option is when the dataset is really tiny (like 15 elements) in these case insert sort could be faster, but in competitive programming or in real life algoritms are expected to scale 
+One edge case where quicksort is not the most optmial option is when the dataset is really tiny (like 15 elements) in these case insert sort could be faster, but in competitive programming or in real life algoritms are expected to scale.
 
 The purpose of this Readme file is give you the skill for a competitive-programing like situation. for a more in detail explanation of quicksort performance and worst case scenario I recommend the book "Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein Introduction to Algorithms, Third Edition  2009".
 
@@ -99,7 +96,6 @@ heapsort has a time compllexity of O(nlogn),  space complexity of o(1) and it op
 
 A sorting algoritmh is stable if it preserves the relative order of equal keys in the array, ( insertion sort
 and mergesort are stable, selection sort, shellsort, quicksort, and heapsort are not (heapsort using priority queue can use a seconda atribute for comparisions throush the comparator interface).
-
 
 
 When we are sorting data ussually we are not jus sorting the keys but also the rest of the data in every record, that is called satellite data
@@ -133,17 +129,63 @@ Notice that you could have several number with the same index, and the way we kn
 
 The way I would do it is using the priorityQueue and the comparator interface 
 
-
-### 7 when you need to sort by two values , exercise 1389
-
-
-### 8 Binary tree (full,complete, perfect,Binary search tree) case 108
+### 7 Binary tree (full,complete, perfect,Binary search tree) case 108
 
 A full binary tree is a data structure where the nodes that decide to have children have two children, a complete binary tree is a data structure where we fill the tree from top to bottom and from left to right and the perfect binary tree is a binary tree that is both full and complete.
 
 ![Image](img/typesOfBT.png "types Of BT")
 
 picture taken from this link, you should check that channel is amazing
+
+### 8 Recursion
+
+A recursive function is function that call itself, this video does a great job explaining it, all of the thing that I will mention (in a high level, please see the video) come from that video. Recursive function are pretty useful when we can see the problem as group of smaller problems where every execution bring a little piece of information for solving the bigger problem. Another important concept is the stack, all of the task that our program should execute (like a to-do list) is in the stack, it is pretty important that our recursive function have and ending condition because otherwise it will generate a stack overflow.
+
+### 9 Graph
+
+Graph is way to represent entities (that we call vertex) and the connections between those entities that we call edges. The two sources I used for this topic are this [video](https://www.youtube.com/watch?v=tWVWeAqZ0WU&t=531s) and this [book](https://www.amazon.com/Algorithms-4th-Robert-Sedgewick/dp/032157351X).
+
+For representing grapth we usually use an adjacency list is a data structure for representing every entity and the entities it have a conection to (in could be a hashmap in java or a dictionary in python)
+
+![Image](img/adjacencylist.png "adjacency list")
+
+edges can be seen as street, some streets are two ways roads, anothers are unirectionals. when we have a graph is unidirectional we call that a directed grapth, when is bidirectional we call that undirected grapgh.
+
+![Image](img/undirectedDitectedGraph.png "undirected Ditected Graph")
+
+The two most important algoritms when it comes to graph are dfs (Depth-first search) and bfs (breadth first search).
+
+Dfs is an algorithm for detecting the connection between entities. For every edge of every vertex we will recursibly call the dfs, in order to avoid an stack overflow we use a list where we indicate those vertex that has already been visited. Piece of code extracted from this [link](https://www.geeksforgeeks.org/depth-first-search-or-dfs-for-a-graph/)
+
+![Image](img/dfsCode.png "dfs code")
+
+To make this a little more clear let's see the following picture. We start by vertex 0, it has three edges 2, 1  and 5. we recursibly apply dfs on vertex 2 that has four vertex 0, 1, 3 and 4. 0 is already marked because we already visited so we apply dfs on the 1 vertex. vertex 1 has two edges but both of then are marked so we go back to vertex 2 to visit its next edge, vertex 3. and so on until the execution conclude.
+
+
+![Image](img/traceDFS.png "trace DFS")
+
+DFS has a time complexity of O(V + E), where V is the number of vertex and E are the number of edges.
+
+When we want to know the shortest path between two components we use the bfs algoritm. In BFS we add all of the edges of the vertex to the queue and then we continue with the next vertex in the edge.
+
+![Image](img/bfsCode.png "bfs Code")
+
+For more clarity, let's see the trace of the program
+
+![Image](img/bfs_trace.png "bfs trace")
+
+
+And the final otutcome will be something like this for finding path from the vertex 0
+
+
+![Image](img/bfs_outcome.png "bfs outcome")
+
+
+
+
+
+
+
 
 ### Summation
 
@@ -153,9 +195,13 @@ picture taken from this link, you should check that channel is amazing
 
 A suffix array is a sorted array of all of the suffixes of a given array (video [explanation](https://www.youtube.com/watch?v=uxA__b23t2w&t=30s) ) , the prefix (could not find a good explanation of prefix array so following the leetcode problem number 654 as a guide we will asume that a prefix array is a counter part of a suffix array). The prefix sum array is (you know what, this explanation is [better](https://www.geeksforgeeks.org/prefix-sum-array-implementation-applications-competitive-programming/) ), I know the inverted prefix sum array (starting from the last element of the array until the first element) has a name but I don't remember what it is
 
-### ???? greedy problems
+### greedy problems
 
-I would like to sound smart, but I won't sound smarter than [this](https://www.geeksforgeeks.org/greedy-algorithms/), for a better undestanding of the greedy algoritm see leetcode problem number 1710
+I would like to sound smart, but I won't sound smarter than [this](https://www.geeksforgeeks.org/greedy-algorithms/), for a better undestanding of the greedy algoritm see leetcode problem number 1710 
+
+### greedy problems
+
+Prim Algoritm
 
 ### ???? data structures (why I use hashmap so much)
 
@@ -447,38 +493,49 @@ public class Solution {
     1.  link to my leetcode [post](https://leetcode.com/problems/sort-the-matrix-diagonally/discuss/1632841/Java-(nlogn)-identify-the-elements-of-that-diagonal)
 
 80. exercise [link](https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/) 1008, I had to see this one in youtube
+    1.  probably better than the code I was going to write, [post](https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/discuss/252232/JavaC%2B%2BPython-O(N)-Solution)
+
 
 81. exercise [link](https://leetcode.com/problems/find-valid-matrix-given-row-and-column-sums/)  1605, needed to see
+    1.  probably better than the code I was going to write, [post](https://leetcode.com/problems/find-valid-matrix-given-row-and-column-sums/discuss/876904/Python-and-C%2B%2B-(Greedy)-Easy-python-solution.-Explained-using-images)
 
 82. exercise [link](https://leetcode.com/problems/design-a-stack-with-increment-operation/) 1381, have not tried yet, should be easy, but I have not created a single class in leetcode
 
 83. exercise [link](https://leetcode.com/problems/maximum-xor-for-each-query/) 1829 had to see, what a hard problem
+    1.  link to my leetcode [post](https://leetcode.com/problems/maximum-xor-for-each-query/discuss/1633273/Java-O(n)-with-explanation)
 
-84. exercise [link](https://leetcode.com/problems/count-number-of-maximum-bitwise-or-subsets/) 2044, hint, is a dp problem, have not been able to do the optimized solution
+84. exercise [link](https://leetcode.com/problems/count-number-of-maximum-bitwise-or-subsets/) 2044, hint, is a dp problem, have not been able to do the optimized solution..........I am stiill owing e this one
 
 85. exercise [link](https://leetcode.com/problems/matrix-block-sum/) 1314
+    1.  partial explanation (need to reach those 100 questions mark): So we need the prefixSum to avoid repeating calculations, the thing is that we can not just flatten the array and do the prefixSum, we need the prefixSum of rows and columns and using that we can obtain any value in the array.
+
 
 86. exercise [link](https://leetcode.com/problems/find-the-winner-of-the-circular-game/) 1823, did not even undertand what am I suppose to do
 
 87. exercise [link](https://leetcode.com/problems/score-after-flipping-matrix/) 861, lost again
 
-88. exercise [link](https://leetcode.com/problems/count-square-submatrices-with-all-ones/) 1277, putting my analysis along with lee analisys I ended with a brilliant explanation
+88. exercise [link](https://leetcode.com/problems/count-square-submatrices-with-all-ones/) 1277, putting my analysis along with lee analisys I ended with a brilliant explanation (I know which one this is, so I will go with the next one I really need the 100 quetions mark)
 
 89. exercise [link](https://leetcode.com/problems/count-triplets-that-can-form-two-arrays-of-equal-xor/) 1442
 
 90. exercise [link](https://leetcode.com/problems/design-browser-history/) 1472
 
 91. exercise [link](https://leetcode.com/problems/spiral-matrix-iii/) 885
+    1. this is way too easy, I have   a partial solution in my book
 
 92. exercise [link](https://leetcode.com/problems/find-all-duplicates-in-an-array/) 442
+    1. I already know the answer to this one, just turn those that already appeared into negative  and using the index we will know which one appeared twice
 
 93. exercise [link](https://leetcode.com/problems/xor-queries-of-a-subarray/) 1310 , that xor prefix thou
+    1. trying to get to that 100 questions mark as soosn as I can, I already have a great explanation in my notes.
 
 94. exercise [link](https://leetcode.com/problems/minimum-number-of-operations-to-reinitialize-a-permutation/) 1806, no clue of what are we doing
 
 95. exercise [link](https://leetcode.com/problems/partition-array-for-maximum-sum/) 1043, that explanation that I created is sweet
+    1.  I already feel I have a great understanding of the problem, so I will move on
 
 96. exercise [link](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/) 889, along with the youtube video would be the explanation
+    1.  I already feel I have a great understanding of the problem, so I will move on
 
 97. exercise [link](https://leetcode.com/problems/subsets/) 78, another great opportunity for explainig backtracking
 
@@ -488,223 +545,624 @@ public class Solution {
 
 100. exercise [link](https://leetcode.com/problems/restore-the-array-from-adjacent-pairs/) 1743, hint find the head or tail
 
-101. exercise [link](https://leetcode.com/problems/single-number-iii/) 260, 
+101. exercise [link](https://leetcode.com/problems/single-number-iii/) 260, I really need to print the
 
 102. exercise [link](https://leetcode.com/problems/minimum-falling-path-sum/) 931 
 
 103. exercise [link](https://leetcode.com/problems/path-with-maximum-gold/) 1219, I don't know nothing abouth dfs or bfs right now
 
-104. exercise [link]()
+104. exercise [link](https://leetcode.com/problems/find-all-groups-of-farmland/) 1992 cool oportunity to practice recursion
 
-105. exercise [link]()
+105. exercise [link](https://leetcode.com/problems/number-of-times-binary-string-is-prefix-aligned/) 1375 I am definitily writting a post about this one 
 
-106. exercise [link]()
+106. exercise [link](https://leetcode.com/problems/stone-game-ii/) 1140, what a weird question
 
-107. exercise [link]()
+107. exercise [link](https://leetcode.com/problems/sum-of-absolute-differences-in-a-sorted-array/) 1685 a post is comiiiiiiinggggggggg, 
 
-108. exercise [link]()
+108. exercise [link](https://leetcode.com/problems/rotate-image/) 48, cool post about bitmasking
 
-109. exercise [link]()
+109. exercise [link](https://leetcode.com/problems/construct-quad-tree/) it's not clear what they want
 
-110. exercise [link]()
+110. exercise [link](https://leetcode.com/problems/beautiful-array/) 932, I don't understand what they want but sound easy
 
-111. exercise [link]()
+111. exercise [link](https://leetcode.com/problems/simple-bank-system/) 2043, did not reas, but looks easy
 
-112. exercise [link]()
+112. exercise [link](https://leetcode.com/problems/top-k-frequent-elements/) 347, this is really easy, but maybe I will do a post about this one
 
-113. exercise [link]()
+113. exercise [link](https://leetcode.com/problems/rotating-the-box/) 1861, well a lot of easy questions is a faster arrival
 
-114. exercise [link]()
+114. exercise [link](https://leetcode.com/problems/minesweeper/) 529, well now thanks to that video I understand what they [want](https://www.youtube.com/watch?v=lla6QlAF4HQ&t=481s)
 
-115. exercise [link]()
+115. exercise [link](https://leetcode.com/problems/beautiful-arrangement/)  526, post incoming
 
-116. exercise [link]()
+116. exercise [link](https://leetcode.com/problems/minimum-numbers-of-function-calls-to-make-target-array/) 1558 , easy
 
-117. exercise [link]()
+117. exercise [link](https://leetcode.com/problems/find-duplicate-file-in-system/) 609
+    1.  what a great [explanation](https://www.youtube.com/watch?v=4KGl6PMwVXE&t=138s)
 
-118. exercise [link]()
+118. exercise [link](https://leetcode.com/problems/minimum-cost-for-tickets/) 983, a post iiiiiin comiiiiiiiiiiiingggg 
 
-119. exercise [link]()
+119. exercise [link](https://leetcode.com/problems/product-of-array-except-self/) 238, some bitmasking, some preSum and Buoalaaaaaa
 
-120. exercise [link]()
+120. exercise [link](https://leetcode.com/problems/combination-sum/) 39, backtrack this
 
-121. exercise [link]()
+121. exercise [link](https://leetcode.com/problems/combination-sum-iii/) 216, I just thought of a really cool way of solving this but probably when I try to do this thing for real I will forget it
 
-122. exercise [link]()
+122. exercise [link](https://leetcode.com/problems/flip-columns-for-maximum-number-of-equal-rows/) 1072, looking for the other parntner using the xor
 
-123. exercise [link]()
+123. exercise [link](https://leetcode.com/problems/number-of-closed-islands/) 1254
 
-124. exercise [link]()
+124. exercise [link](https://leetcode.com/problems/jump-game-iii/) 1306, at least with this video I understan what they want, and a little idea of how to implement a [bfs](https://www.youtube.com/watch?v=7Cz91Uj0VCU)
 
-125. exercise [link]()
+125. exercise [link](https://leetcode.com/problems/find-kth-largest-xor-coordinate-value/) 1738, after watching this youtube video, this question looks [weider](https://www.youtube.com/watch?v=UgsURtz0v94)
 
-126. exercise [link]()
+126. exercise [link](https://leetcode.com/problems/ways-to-make-a-fair-array/) 1664, still no end to end idea of how will I do it, but I feel a post coming
 
-127. exercise [link]()
+127. exercise [link](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/) 1011, still no end to end solution but this is an easy problem
 
-128. exercise [link]()
+128. exercise [link](https://leetcode.com/problems/find-unique-binary-string/) 1980, esasy
 
-129. exercise [link]()
+129. exercise [link](https://leetcode.com/problems/count-sub-islands/) 1905, and easier
 
-130. exercise [link]()
+130. exercise [link](https://leetcode.com/problems/max-consecutive-ones-iii/) 1004, a post is comiiiiiing
 
-131. exercise [link]()
+131. exercise [link](https://leetcode.com/problems/combinations/) 77, cool practice
 
-132. exercise [link]()
+132. exercise [link](https://leetcode.com/problems/arithmetic-slices/) 413, some great ideas for this thing
 
-133. exercise [link]()
+133. exercise [link](https://leetcode.com/problems/game-of-life/) 289. game of life
 
-134. exercise [link]()
+134. exercise [link](https://leetcode.com/problems/average-waiting-time/) 1701
 
-135. exercise [link]()
+135. exercise [link](https://leetcode.com/problems/replace-words/) 648
 
-136. exercise [link]()
+136. exercise [link](https://leetcode.com/problems/image-overlap/) 835
 
-137. exercise [link]()
+137. exercise [link](https://leetcode.com/problems/minimum-time-to-make-rope-colorful/) 1578
 
-138. exercise [link]()
+138. exercise [link](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/) 122
 
-139. exercise [link]()
+139. exercise [link](https://leetcode.com/problems/next-greater-element-ii/) 503, I did not understand, I will see a video or something
 
-140. exercise [link]()
+140. exercise [link](https://leetcode.com/problems/spiral-matrix-ii/) 59, I still don't have an end to end solution, but this sound easy as fuck
 
-141. exercise [link]()
+141. exercise [link](https://leetcode.com/problems/number-of-enclaves/) 1020, there was a similar question
 
-142. exercise [link]()
+142. exercise [link](https://leetcode.com/problems/reduction-operations-to-make-the-array-elements-equal/) 1887, another easy question
 
-143. exercise [link]()
+143. exercise [link](https://leetcode.com/problems/compare-strings-by-frequency-of-the-smallest-character/) 1170
 
-144. exercise [link]()
+144. exercise [link](https://leetcode.com/problems/sum-of-even-numbers-after-queries/) 985
 
-145. exercise [link]()
+145. exercise [link](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/) 714
 
-146. exercise [link]()
+146. exercise [link](https://leetcode.com/problems/largest-values-from-labels/) 1090 , I don't understand what they want
 
-147. exercise [link]()
+147. exercise [link](https://leetcode.com/problems/min-cost-to-connect-all-points/) 1584 , well I thought there would be a funnier way to do [this](https://www.youtube.com/watch?v=f7JOBJIC-NA)
 
-148. exercise [link]()
+148. exercise [link](https://leetcode.com/problems/merge-triplets-to-form-target-triplet/) 1899
 
-149. exercise [link]()
+149. exercise [link](https://leetcode.com/problems/tuple-with-same-product/) 1726
 
-150. exercise [link]()
+150. exercise [link](https://leetcode.com/problems/escape-the-ghosts/) 789
 
-151. exercise [link]()
+151. exercise [link](https://leetcode.com/problems/largest-submatrix-with-rearrangements/) 1727
 
-152. exercise [link]()
+152. exercise [link](https://leetcode.com/problems/two-city-scheduling/) 1029
 
-153. exercise [link]()
+153. exercise [link](https://leetcode.com/problems/car-pooling/) 1094 , wat roo easy
 
-154. exercise [link]()
+154. exercise [link](https://leetcode.com/problems/the-k-strongest-values-in-an-array/) 1471, another quite easy
 
-155. exercise [link]()
+155. exercise [link](https://leetcode.com/problems/range-sum-of-sorted-subarray-sums/) 1508
 
-156. exercise [link]()
+156. exercise [link](https://leetcode.com/problems/count-submatrices-with-all-ones/) 1504
 
-157. exercise [link]()
+157. exercise [link](https://leetcode.com/problems/next-greater-node-in-linked-list/) 1019
 
-158. exercise [link]()
+158. exercise [link](https://leetcode.com/problems/print-words-vertically/) 1324, back to the easy questions
 
-159. exercise [link]()
+159. exercise [link](https://leetcode.com/problems/beautiful-arrangement-ii/) 667, well, once I see the explanation is way clearer
 
-160. exercise [link]()
+160. exercise [link](https://leetcode.com/problems/maximum-sum-of-two-non-overlapping-subarrays/) 1031
 
-161. exercise [link]()
+161. exercise [link](https://leetcode.com/problems/decode-xored-permutation/) 1734
 
-162. exercise [link]()
+162. exercise [link](https://leetcode.com/problems/least-number-of-unique-integers-after-k-removals/) 1481
 
-163. exercise [link]()
+163. exercise [link](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/) 378
 
-164. exercise [link]()
+164. exercise [link](https://leetcode.com/problems/stone-game-vii/) 1690
 
-165. exercise [link]()
+165. exercise [link](https://leetcode.com/problems/single-element-in-a-sorted-array/) 540 , hint , one in odd position, the  other one is in an even position
 
-166. exercise [link]()
+166. exercise [link](https://leetcode.com/problems/exclusive-time-of-functions/) 636
 
-167. exercise [link]()
+167. exercise [link](https://leetcode.com/problems/map-of-highest-peak/) 1765
 
-168. exercise [link]()
+168. exercise [link](https://leetcode.com/problems/maximum-alternating-subsequence-sum/) 1911
 
-169. exercise [link]()
+169. exercise [link](https://leetcode.com/problems/maximum-compatibility-score-sum/) 1947
 
-170. exercise [link]()
+170. exercise [link](https://leetcode.com/problems/optimal-division/) 553
 
-171. exercise [link]()
+171. exercise [link](https://leetcode.com/problems/minimum-path-sum/) 64
 
-172. exercise [link]()
+172. exercise [link](https://leetcode.com/problems/filter-restaurants-by-vegan-friendly-price-and-distance/) 1333
 
-173. exercise [link]()
+173. exercise [link](https://leetcode.com/problems/rank-teams-by-votes/) 1366
 
-174. exercise [link]()
+174. exercise [link](https://leetcode.com/problems/find-the-duplicate-number/) 287
 
-175. exercise [link]()
+175. exercise [link](https://leetcode.com/problems/removing-minimum-and-maximum-from-array/) 2091
 
-176. exercise [link]()
+176. exercise [link](https://leetcode.com/problems/rle-iterator/) 900
 
-177. exercise [link]()
+177. exercise [link](https://leetcode.com/problems/remove-covered-intervals/) 1288
 
-178. exercise [link]()
+178. exercise [link](https://leetcode.com/problems/count-servers-that-communicate/) 1267
 
-179. exercise [link]()
+179. exercise [link](https://leetcode.com/problems/filling-bookcase-shelves/) 1105, way too long, did not read
 
-180. exercise [link]()
+180. exercise [link](https://leetcode.com/problems/count-number-of-nice-subarrays/) 1248
 
-181. exercise [link]()
+181. exercise [link](https://leetcode.com/problems/uncrossed-lines/) 1035
 
-182. exercise [link]()
+182. exercise [link](https://leetcode.com/problems/longest-string-chain/) 1048
 
-183. exercise [link]()
+183. exercise [link](https://leetcode.com/problems/max-chunks-to-make-sorted/) 769
 
-184. exercise [link]()
+184. exercise [link](https://leetcode.com/problems/count-unhappy-friends/) 1583
 
-185. exercise [link]()
+185. exercise [link](https://leetcode.com/problems/design-circular-deque/) 641
 
-186. exercise [link]()
+186. exercise [link](https://leetcode.com/problems/best-sightseeing-pair/) 1014
 
-187. exercise [link]()
+187. exercise [link](https://leetcode.com/problems/corporate-flight-bookings/) 1109
 
-188. exercise [link]()
+188. exercise [link](https://leetcode.com/problems/grumpy-bookstore-owner/) 1052
 
-189. exercise [link]()
+189. exercise [link](https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii/) 462
 
-190. exercise [link]()
+190. exercise [link](https://leetcode.com/problems/minimum-difference-between-largest-and-smallest-value-in-three-moves/) 1509
 
-191. exercise [link]()
+191. exercise [link](https://leetcode.com/problems/maximum-element-after-decreasing-and-rearranging/) 1846
 
-192. exercise [link]()
+192. exercise [link](https://leetcode.com/problems/sum-of-subarray-ranges/) 2104
 
-193. exercise [link]()
+193. exercise [link](https://leetcode.com/problems/maximum-product-of-word-lengths/)
 
-194. exercise [link]()
+194. exercise [link](https://leetcode.com/problems/shuffle-an-array/) 384
 
-195. exercise [link]()
+195. exercise [link](https://leetcode.com/problems/evaluate-division/) 399
 
-196. exercise [link]()
+196. exercise [link](https://leetcode.com/problems/array-nesting/) 565
 
-197. exercise [link]()
+197. exercise [link](https://leetcode.com/problems/people-whose-list-of-favorite-companies-is-not-a-subset-of-another-list/) 1452
 
-198. exercise [link]()
+198. exercise [link](https://leetcode.com/problems/divide-array-in-sets-of-k-consecutive-numbers/) 1296
 
-199. exercise [link]()
+199. exercise [link](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) 105
 
-200. exercise [link]()
+200. exercise [link](https://leetcode.com/problems/hand-of-straights/) 846, sound pretty similar to one I saw before
 
-201. exercise [link]()
+201. exercise [link](https://leetcode.com/problems/maximum-absolute-sum-of-any-subarray/) 1749
 
-202. exercise [link]()
+202. exercise [link](https://leetcode.com/problems/single-number-ii/) 137
 
-203. exercise [link]()
+203. exercise [link](https://leetcode.com/problems/rabbits-in-forest/) 781
 
-204. exercise [link]()
+204. exercise [link](https://leetcode.com/problems/4sum-ii/) 454
 
-205. exercise [link]()
+205. exercise [link](https://leetcode.com/problems/coin-change-2/) 518
 
-206. exercise [link]()
+206. exercise [link](https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/) 1760
 
-207. exercise [link]()
+207. exercise [link](https://leetcode.com/problems/loud-and-rich/) 851
 
-208. exercise [link]()
+208. exercise [link](https://leetcode.com/problems/design-front-middle-back-queue/) 1670
 
-209. exercise [link]()
+209. exercise [link](https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/) 421
+
+210. exercise [link](https://leetcode.com/problems/maximum-length-of-pair-chain/) 646
+
+211. exercise [link](https://leetcode.com/problems/open-the-lock/) 752
+
+212. exercise [link](https://leetcode.com/problems/short-encoding-of-words/) 820
+
+213. exercise [link](https://leetcode.com/problems/moving-stones-until-consecutive-ii/) 1040
+
+214. exercise [link](https://leetcode.com/problems/remove-stones-to-minimize-the-total/)
+
+215. exercise [link](https://leetcode.com/problems/accounts-merge/) 721
+
+216. exercise [link](https://leetcode.com/problems/adding-spaces-to-a-string/) 2109
+
+217. exercise [link](https://leetcode.com/problems/diagonal-traverse/) 498
+
+218. exercise [link](https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/) 1482
+
+219. exercise [link](https://leetcode.com/problems/last-moment-before-all-ants-fall-out-of-a-plank/) 1503
+
+220. exercise [link](https://leetcode.com/problems/koko-eating-bananas/) 875
+
+221. exercise [link](https://leetcode.com/problems/find-a-peak-element-ii/) 1901
+
+222. exercise [link](https://leetcode.com/problems/shopping-offers/) 638
+
+223. exercise [link](https://leetcode.com/problems/delete-and-earn/) 740
+
+224. exercise [link](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) 106
+
+225. exercise [link](https://leetcode.com/problems/minimum-area-rectangle-ii/) 963
+
+226. exercise [link](https://leetcode.com/problems/task-scheduler/) 621
+
+227. exercise [link](https://leetcode.com/problems/valid-sudoku/) 36
+
+228. exercise [link](https://leetcode.com/problems/max-number-of-k-sum-pairs/) 1679
+
+229. exercise [link](https://leetcode.com/problems/find-and-replace-in-string/) 833
+
+230. exercise [link](https://leetcode.com/problems/sort-colors/) 75
+
+231. exercise [link](https://leetcode.com/problems/number-of-boomerangs/) 447
+
+232. exercise [link](https://leetcode.com/problems/container-with-most-water/) 11
+
+233. exercise [link](https://leetcode.com/problems/minimum-area-rectangle/) 939
+
+234. exercise [link](https://leetcode.com/problems/minimum-time-difference/) 539
+
+235. exercise [link](https://leetcode.com/problems/minimum-moves-to-equal-array-elements/) 453
+
+236. exercise [link](https://leetcode.com/problems/peeking-iterator/) 284
+
+237. exercise [link](https://leetcode.com/problems/word-subsets/) 916
+
+238. exercise [link](https://leetcode.com/problems/magnetic-force-between-two-balls/) 1552
+
+239. exercise [link](https://leetcode.com/problems/stone-game-vi/) 1686
+
+240. exercise [link](https://leetcode.com/problems/permutations-ii/) 47
+
+241. exercise [link](https://leetcode.com/problems/form-array-by-concatenating-subarrays-of-another-array/) 1764
+
+242. exercise [link](https://leetcode.com/problems/number-of-smooth-descent-periods-of-a-stock/) 2110
+
+243. exercise [link](https://leetcode.com/problems/subarray-sums-divisible-by-k/) 974
+
+244. exercise [link](https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/) 1283
+
+245. exercise [link](https://leetcode.com/problems/number-of-islands/) 200
+
+246. exercise [link](https://leetcode.com/problems/brick-wall/) 554
+
+247. exercise [link](https://leetcode.com/problems/previous-permutation-with-one-swap/) 1053
+
+248. exercise [link](https://leetcode.com/problems/number-of-subarrays-with-bounded-maximum/) 795
+
+249. exercise [link](https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/) 1010
+
+250. exercise [link](https://leetcode.com/problems/maximum-side-length-of-a-square-with-sum-less-than-or-equal-to-threshold/) 1292
+
+251. exercise [link](https://leetcode.com/problems/maximum-erasure-value/) 1695
+
+252. exercise [link](https://leetcode.com/problems/minimum-score-triangulation-of-polygon/) 1039
+
+253. exercise [link](https://leetcode.com/problems/largest-sum-of-averages/) 813
+
+254. exercise [link](https://leetcode.com/problems/subsets-ii/) 90
+
+255. exercise [link](https://leetcode.com/problems/shortest-bridge/) 934
+
+256. exercise [link](https://leetcode.com/problems/combination-sum-ii/) 40
+
+257. exercise [link](https://leetcode.com/problems/total-hamming-distance/) 477
+
+258. exercise [link](https://leetcode.com/problems/online-election/) 911
+
+259. exercise [link](https://leetcode.com/problems/vowel-spellchecker/) 966
+
+260. exercise [link](https://leetcode.com/problems/watering-plants-ii/) 2105
+
+261. exercise [link](https://leetcode.com/problems/maximum-length-of-repeated-subarray/) 718
+
+262. exercise [link](https://leetcode.com/problems/path-with-minimum-effort/) 1631
+
+263. exercise [link](https://leetcode.com/problems/rotting-oranges/) 994
+
+264. exercise [link](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/) 309
+
+265. exercise [link](https://leetcode.com/problems/advantage-shuffle/) 870
+
+266. exercise [link](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/) 452
+
+267. exercise [link](https://leetcode.com/problems/equal-sum-arrays-with-minimum-number-of-operations/) 1775
+
+268. exercise [link](https://leetcode.com/problems/insert-delete-getrandom-o1/) 380
+
+269. exercise [link](https://leetcode.com/problems/longest-word-in-dictionary-through-deleting/) 524
+
+270. exercise [link](https://leetcode.com/problems/minimum-domino-rotations-for-equal-row/) 1007
+
+271. exercise [link](https://leetcode.com/problems/largest-magic-square/) 1895
+
+272. exercise [link](https://leetcode.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/)
+
+273. exercise [link](https://leetcode.com/problems/greatest-sum-divisible-by-three/) 1262
+
+274. exercise [link](https://leetcode.com/problems/maximum-of-absolute-value-expression/) 1131
+
+275. exercise [link](https://leetcode.com/problems/construct-the-lexicographically-largest-valid-sequence/) 1718
+
+276. exercise [link](https://leetcode.com/problems/longest-word-in-dictionary/) 720
+
+277. exercise [link](https://leetcode.com/problems/maximum-number-of-consecutive-values-you-can-make/) 1798
+
+278. exercise [link](https://leetcode.com/problems/increasing-subsequences/) 491
+
+279. exercise [link](https://leetcode.com/problems/video-stitching/) 1024
+
+280. exercise [link](https://leetcode.com/problems/last-stone-weight-ii/) 1049
+
+281. exercise [link](https://leetcode.com/problems/predict-the-winner/) 486
+
+282. exercise [link](https://leetcode.com/problems/maximum-average-pass-ratio/) 1792
+
+283. exercise [link](https://leetcode.com/problems/boats-to-save-people/) 881
+
+284. exercise [link](https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/) 1423
+
+285. exercise [link](https://leetcode.com/problems/longest-arithmetic-subsequence-of-given-difference/) 1218
+
+286. exercise [link](https://leetcode.com/problems/valid-triangle-number/) 611
+
+287. exercise [link](https://leetcode.com/problems/satisfiability-of-equality-equations/) 990
+
+288. exercise [link](https://leetcode.com/problems/triangle/) 120
+
+289. exercise [link](https://leetcode.com/problems/find-right-interval/) 436
+
+290. exercise [link](https://leetcode.com/problems/minimum-sideway-jumps/) 1824
+
+291. exercise [link](https://leetcode.com/problems/largest-1-bordered-square/) 1139
+
+292. exercise [link](https://leetcode.com/problems/plates-between-candles/)
+
+293. exercise [link](https://leetcode.com/problems/diagonal-traverse-ii/) 1424
+
+294. exercise [link](https://leetcode.com/problems/longest-arithmetic-subsequence/) 1027
+
+295. exercise [link](https://leetcode.com/problems/find-the-winner-of-an-array-game/) 1535 
+
+296. exercise [link](https://leetcode.com/problems/largest-plus-sign/) 764
+
+297. exercise [link](https://leetcode.com/problems/length-of-longest-fibonacci-subsequence/) 873
+
+298. exercise [link](https://leetcode.com/problems/combination-sum-iv/) 377
+
+299. exercise [link](https://leetcode.com/problems/minimum-increment-to-make-array-unique/) 945
+
+300. exercise [link](https://leetcode.com/problems/longest-consecutive-sequence/) 128
+
+301. exercise [link](https://leetcode.com/problems/design-circular-queue/) 
+
+302. exercise [link](https://leetcode.com/problems/partition-array-into-disjoint-intervals/) 915
+
+303. exercise [link](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/) 80
+
+304. exercise [link](https://leetcode.com/problems/most-beautiful-item-for-each-query/) 2070
+
+305. exercise [link](https://leetcode.com/problems/longest-increasing-subsequence/) 300
+
+306. exercise [link](https://leetcode.com/problems/maximum-distance-between-a-pair-of-values/) 1855
+
+307. exercise [link](https://leetcode.com/problems/minimum-operations-to-make-a-uni-value-grid/) 2033
+
+308. exercise [link](https://leetcode.com/problems/the-time-when-the-network-becomes-idle/) 2039, what a long description, just readed the discussion section
+
+309. exercise [link](https://leetcode.com/problems/binary-subarrays-with-sum/) 930
+
+310. exercise [link](https://leetcode.com/problems/maximum-width-ramp/) 962
+
+311. exercise [link](https://leetcode.com/problems/coloring-a-border/) 1034
+
+312. exercise [link](https://leetcode.com/problems/finding-pairs-with-a-certain-sum/) 1865
+
+313. exercise [link](https://leetcode.com/problems/find-the-most-competitive-subsequence/) 1673
+
+314. exercise [link](https://leetcode.com/problems/array-with-elements-not-equal-to-average-of-neighbors/) 1968
+
+315. exercise [link](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) 153
+
+316. exercise [link](https://leetcode.com/problems/longest-turbulent-subarray/)  978
+
+317. exercise [link](https://leetcode.com/problems/as-far-from-land-as-possible/) 1162
+
+318. exercise [link](https://leetcode.com/problems/minimum-cost-homecoming-of-a-robot-in-a-grid/) 2087
+
+319. exercise [link](https://leetcode.com/problems/search-a-2d-matrix-ii/) dannnmmmmm this is cool
+
+320. exercise [link](https://leetcode.com/problems/detect-cycles-in-2d-grid/) 1559
+
+321. exercise [link](https://leetcode.com/problems/set-matrix-zeroes/) 73
+
+322. exercise [link](https://leetcode.com/problems/car-fleet/) 853
+
+323. exercise [link](https://leetcode.com/problems/product-of-the-last-k-numbers/) 1352
+
+324. exercise [link](https://leetcode.com/problems/pacific-atlantic-water-flow/) 417
+
+325. exercise [link](https://leetcode.com/problems/3sum-closest/) 16
+
+326. exercise [link](https://leetcode.com/problems/non-overlapping-intervals/) 435
+
+327. exercise [link](https://www.starplus.com/live-event/73JiB7Zx9FCj) 1722
+
+328. exercise [link](https://leetcode.com/problems/decrease-elements-to-make-array-zigzag/) 1144
+
+329. exercise [link](https://leetcode.com/problems/alert-using-same-key-card-three-or-more-times-in-a-one-hour-period/) 1604
+
+330. exercise [link](https://leetcode.com/problems/check-if-word-can-be-placed-in-crossword/) 2018
+
+331. exercise [link](https://leetcode.com/problems/super-ugly-number/) 313
+
+332. exercise [link](https://leetcode.com/problems/check-if-there-is-a-valid-path-in-a-grid/) 1391
+
+333. exercise [link](https://leetcode.com/problems/expressive-words/) 809
+
+334. exercise [link](https://leetcode.com/problems/range-sum-query-2d-immutable/) 304
+
+335. exercise [link](https://leetcode.com/problems/bag-of-tokens/) 948
+
+336. exercise [link](https://leetcode.com/problems/partition-to-k-equal-sum-subsets/) 698
+
+337. exercise [link](https://leetcode.com/problems/house-robber/) 198
+
+338. exercise [link](https://leetcode.com/problems/closest-dessert-cost/) 1774 
+
+339. exercise [link](https://leetcode.com/problems/describe-the-painting/) 1943, 
+
+340. exercise [link](https://leetcode.com/problems/maximum-number-of-non-overlapping-subarrays-with-sum-equals-target/) 1546
+
+341. exercise [link](https://leetcode.com/problems/count-nodes-with-the-highest-score/) 2049
+
+342. exercise [link]()
+
+343. exercise [link]()
+
+344. exercise [link]()
+
+345. exercise [link]()
+
+346. exercise [link]()
+
+347. exercise [link]()
+
+348. exercise [link]()
+
+349. exercise [link]()
+
+350. exercise [link]()
+
+351. exercise [link]()
+
+352. exercise [link]()
+
+353. exercise [link]()
+
+354. exercise [link]()
+
+355. exercise [link]()
+
+356. exercise [link]()
+
+357. exercise [link]()
+
+358. exercise [link]()
+
+359. exercise [link]()
+
+360. exercise [link]()
+
+361. exercise [link]()
+
+362. exercise [link]()
+
+363. exercise [link]()
+
+364. exercise [link]()
+
+365. exercise [link]()
+
+366. exercise [link]()
+
+367. exercise [link]()
+
+368. exercise [link]()
+
+369. exercise [link]()
+
+370. exercise [link]()
+
+371. exercise [link]()
+
+372. exercise [link]()
+
+373. exercise [link]()
+
+374. exercise [link]()
+
+375. exercise [link]()
+
+376. exercise [link]()
+
+377. exercise [link]()
+
+378. exercise [link]()
+
+379. exercise [link]()
+
+380. exercise [link]()
+
+381. exercise [link]()
+
+382. exercise [link]()
+
+383. exercise [link]()
+
+384. exercise [link]()
+
+385. exercise [link]()
+
+386. exercise [link]()
+
+387. exercise [link]()
+
+388. exercise [link]()
+
+389. exercise [link]()
+
+390. exercise [link]()
+
+391. exercise [link]()
+
+392. exercise [link]()
+
+393. exercise [link]()
+
+394. exercise [link]()
+
+395. exercise [link]()
+
+396. exercise [link]()
+
+397. exercise [link]()
+
+398. exercise [link]()
+
+399. exercise [link]()
+
+400. exercise [link]()
+
+401. exercise [link]()
+
+402. exercise [link]()
+
+403. exercise [link]()
+
+404. exercise [link]()
+
+405. exercise [link]()
+
+406. exercise [link]()
+
+407. exercise [link]()
+
+408. exercise [link]()
+
+409. exercise [link]()
 
 
 # Questions that I think are poorly written
