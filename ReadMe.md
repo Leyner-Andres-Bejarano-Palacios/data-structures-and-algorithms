@@ -57,6 +57,7 @@ A function with exponential time complexity means that we are having a number of
 This is a great example of a factorial time complexity [function](https://www.youtube.com/watch?v=Mo4vesaut8g&list=WL&index=7&t=6439s)
 
 For competitive programming there are only two types of important spacial complexity O(1) meaning that you are creating new variables in every iteration and the non-constant meaning that you are doing it. When you are working with recursive functions is very likely that the spatial complexity will be linear, becasuse every invocation of the recursive function is creating a piece of information for the bigger problem like they mention in this  [video](https://www.youtube.com/watch?v=Mo4vesaut8g&list=WL&index=7&t=6439s)
+
 ### 2. storing two numbers in one using bitmasking, exrcise 1920
 
 When you need two arrays, one for input and another for answer but can only use one (like in this occasion when they require constant space complexity) we will need to store two numbers in one. Notice that all numbers must be equal or less than the array lenght and the maximun lenght size is 1000. Binary representation of 1000 has 10 digits (1111101000) so we need to a number which binary representation has 10 digits and they all 1's (1023).
@@ -139,7 +140,7 @@ picture taken from this link, you should check that channel is amazing
 
 ### 8 Recursion
 
-A recursive function is function that call itself, this video does a great job explaining it, all of the thing that I will mention (in a high level, please see the video) come from that video. Recursive function are pretty useful when we can see the problem as group of smaller problems where every execution bring a little piece of information for solving the bigger problem. Another important concept is the stack, all of the task that our program should execute (like a to-do list) is in the stack, it is pretty important that our recursive function have and ending condition because otherwise it will generate a stack overflow.
+A recursive function is function that call itself, this video does a great job explaining it, all of the thing that I will mention (in a high level, please see the video) come from this [video](https://www.youtube.com/watch?v=IJDJ0kBx2LM). Recursive function are pretty useful when we can see the problem as group of smaller problems where every execution bring a little piece of information for solving the bigger problem. Another important concept is the stack, all of the task that our program should execute (like a to-do list) is in the stack, it is pretty important that our recursive function have and ending condition because otherwise it will generate a stack overflow.
 
 ### 9 Graph
 
@@ -180,11 +181,14 @@ And the final otutcome will be something like this for finding path from the ver
 
 ![Image](img/bfs_outcome.png "bfs outcome")
 
+Another important concept that you will need when it comes to graphs is the minimun spanning tree. Imagine you have a group of vertex and edges between them, in real life those edges usually have a cost or weight associated to it, like a distance between cities or fares. A spanning tree of a graph is a subgraph that connects all vertex with no cycles in it, like the picture below
 
 
+![Image](img/spanningTree.png "spanning Tree")
 
+A minimum spanning tree (MST) of an edge-weighted graph is a spanning tree whose weight (the sum of the weights of its edges) is no larger tha the weight of any other spanning tree.
 
-
+To find the minimum spanning tree we need the Prims algoritm
 
 
 ### Summation
@@ -555,38 +559,47 @@ public class Solution {
 104. exercise [link](https://leetcode.com/problems/find-all-groups-of-farmland/) 1992
     1.  Now that I am a master of dfs this would be really easy
 
-105. exercise [link](https://leetcode.com/problems/number-of-times-binary-string-is-prefix-aligned/) 1375 I am definitily writting a post about this one 
+105. exercise [link](https://leetcode.com/problems/number-of-times-binary-string-is-prefix-aligned/) 1375 I am definitily writting a post about this one
+    1.  link to my leetcode [post](https://leetcode.com/problems/number-of-times-binary-string-is-prefix-aligned/discuss/1658613/python-Summation-O(N)-time-O(1))
 
 106. exercise [link](https://leetcode.com/problems/stone-game-ii/) 1140, what a weird question
 
-107. exercise [link](https://leetcode.com/problems/sum-of-absolute-differences-in-a-sorted-array/) 1685 a post is comiiiiiiinggggggggg, 
+107. exercise [link](https://leetcode.com/problems/sum-of-absolute-differences-in-a-sorted-array/) 1685, coming up with a formula ? dannnmmmmmm 
 
-108. exercise [link](https://leetcode.com/problems/rotate-image/) 48, cool post about bitmasking
+108. exercise [link](https://leetcode.com/problems/rotate-image/) 48,
+    1.  sometimes you win, sometimes you have to see the solution,
 
 109. exercise [link](https://leetcode.com/problems/construct-quad-tree/) it's not clear what they want
 
-110. exercise [link](https://leetcode.com/problems/beautiful-array/) 932, I don't understand what they want but sound easy
+110. exercise [link](https://leetcode.com/problems/beautiful-array/) 932
+    1.  the only way to solve this is knowing this [vide](https://www.youtube.com/watch?v=7-RZ0Lw6VRg&t=203s)
 
-111. exercise [link](https://leetcode.com/problems/simple-bank-system/) 2043, did not reas, but looks easy
+111. exercise [link](https://leetcode.com/problems/simple-bank-system/) 2043, way too easy, did not even bother
 
-112. exercise [link](https://leetcode.com/problems/top-k-frequent-elements/) 347, this is really easy, but maybe I will do a post about this one
+112. exercise [link](https://leetcode.com/problems/top-k-frequent-elements/) 347, this is really easy
 
 113. exercise [link](https://leetcode.com/problems/rotating-the-box/) 1861, well a lot of easy questions is a faster arrival
 
-114. exercise [link](https://leetcode.com/problems/minesweeper/) 529, well now thanks to that video I understand what they [want](https://www.youtube.com/watch?v=lla6QlAF4HQ&t=481s)
+114. exercise [link](https://leetcode.com/problems/minesweeper/) 529, well now thanks to that video I understand what they [want](https://www.youtube.com/watch?v=lla6QlAF4HQ&t=481s) , and it's quite easy
 
-115. exercise [link](https://leetcode.com/problems/beautiful-arrangement/)  526, post incoming
+115. exercise [link](https://leetcode.com/problems/beautiful-arrangement/)  526, really did not like it
 
 116. exercise [link](https://leetcode.com/problems/minimum-numbers-of-function-calls-to-make-target-array/) 1558 , easy
 
 117. exercise [link](https://leetcode.com/problems/find-duplicate-file-in-system/) 609
     1.  what a great [explanation](https://www.youtube.com/watch?v=4KGl6PMwVXE&t=138s)
 
-118. exercise [link](https://leetcode.com/problems/minimum-cost-for-tickets/) 983, a post iiiiiin comiiiiiiiiiiiingggg 
+118. exercise [link](https://leetcode.com/problems/minimum-cost-for-tickets/) 983, a post iiiiiin comiiiiiiiiiiiingggg
+    1.  dfs-----------
+        for num in day:
+            -if next one is not consecutive = 2 inmediatly
+            -if next one is consecutive, and next one is consecutive - repeat to see number of days and also to know the position where we end up
 
-119. exercise [link](https://leetcode.com/problems/product-of-array-except-self/) 238, some bitmasking, some preSum and Buoalaaaaaa
+119. exercise [link](https://leetcode.com/problems/product-of-array-except-self/) 238,
+    1.  what a great piece of [code](https://leetcode.com/problems/product-of-array-except-self/discuss/65638/My-simple-Java-solution)
 
 120. exercise [link](https://leetcode.com/problems/combination-sum/) 39, backtrack this
+    1.  link to my [post](https://leetcode.com/problems/combination-sum/discuss/1686205/python-DFS)
 
 121. exercise [link](https://leetcode.com/problems/combination-sum-iii/) 216, I just thought of a really cool way of solving this but probably when I try to do this thing for real I will forget it
 
